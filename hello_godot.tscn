@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://51brfrpie6q3"]
+
+[ext_resource type="Shader" path="res://scroll.gdshader" id="1_0dlxv"]
+[ext_resource type="Texture2D" uid="uid://dtvnev12vx7i1" path="res://sheep-drinking-coffee-small.jpeg" id="2_8w5w4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_in64c"]
+shader = ExtResource("1_0dlxv")
+shader_parameter/scroll_speed = 0.1
+shader_parameter/angle_degrees = 45.0
+shader_parameter/repeat_x = 1.0
+shader_parameter/repeat_y = 1.0
+shader_parameter/tint = Color(0.255659, 0.255659, 0.255659, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ritsk"]
+font_size = 48
+shadow_size = 4
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="HelloGodot" type="TextureRect"]
+material = SubResource("ShaderMaterial_in64c")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_8w5w4")
+stretch_mode = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = -11.5
+offset_right = 48.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Hello Godot!"
+label_settings = SubResource("LabelSettings_ritsk")
